@@ -8,12 +8,19 @@ export const Card = ({ activity, setOpen }) => {
     <div className="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md">
       <div className="flex justify-between flex-col cursor-pointer">
         <Link to={`/detail/${id}`} data-cy="activity-item">
-          <h5 className="mb-2 text-2xl  h-64 font-bold tracking-tight text-gray-900">
+          <h5
+            className="mb-2 text-2xl  h-64 font-bold tracking-tight text-gray-900"
+            data-cy="activity-item-title"
+          >
             {title}
           </h5>
         </Link>
         <div className="flex justify-between">
-          <span className="font-semibold text-xl" style={{ color: "#888888" }}>
+          <span
+            className="font-semibold text-xl"
+            style={{ color: "#888888" }}
+            data-cy="activity-item-date"
+          >
             {moment(created_at).format("DD MMMM YYYY")}
           </span>
           <button

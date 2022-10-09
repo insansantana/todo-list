@@ -79,7 +79,7 @@ const Home = () => {
   return (
     <section data-cy="home">
       <Activity create={createActivity} />
-      <div data-cy="activity-item">
+      <div>
         {activitys?.length > 0 ? (
           <div className="container mx-auto grid lg:grid-cols-3 lg:gap-3 xl:grid-cols-4 xl:gap-4  grid-cols-2 gap-2 ">
             {activitys.map((activity, i) => (
