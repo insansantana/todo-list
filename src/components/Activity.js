@@ -23,9 +23,13 @@ const Activity = ({
     <div className="container mx-auto flex justify-between my-10">
       <div className="text-3xl font-bold flex items-center">
         {params && (
-          <span onClick={() => navigate(-1)} className="cursor-pointer">
+          <button
+            data-cy="todo-back-button"
+            onClick={() => navigate(-1)}
+            className="cursor-pointer"
+          >
             <img src={require("../assets/arrowLeft.svg").default} alt="" />
-          </span>
+          </button>
         )}
         <div
           className="flex items-center"
@@ -41,7 +45,10 @@ const Activity = ({
               className="border-b border-black outline-none"
             />
           ) : (
-            <span data-cy="activity-title" className="mx-3">
+            <span
+              data-cy={params?.id ? "todo-title" : "activity-title"}
+              className="mx-3"
+            >
               {params ? title : "Activity"}
             </span>
           )}
@@ -129,7 +136,7 @@ const Activity = ({
           </div>
         )}
         <button
-          data-cy="activity-add-button"
+          data-cy={params?.id ? "todo-add-button" : "activity-add-button"}
           className="text-white font-bold py-2 px-4 rounded-3xl"
           style={{ backgroundColor: "#16ABF8" }}
           onClick={() => {

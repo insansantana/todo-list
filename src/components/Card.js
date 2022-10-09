@@ -7,7 +7,7 @@ export const Card = ({ activity, setOpen }) => {
   return (
     <div className="p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md">
       <div className="flex justify-between flex-col cursor-pointer">
-        <Link to={`/detail/${id}`}>
+        <Link to={`/detail/${id}`} data-cy="activity-item">
           <h5 className="mb-2 text-2xl  h-64 font-bold tracking-tight text-gray-900">
             {title}
           </h5>
