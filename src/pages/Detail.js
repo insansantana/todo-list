@@ -5,7 +5,8 @@ import ModalForm from "../components/ModalForm";
 import Activity from "../components/Activity";
 import ModalDelete from "../components/ModalDelete";
 import AlertSuccess from "../components/AlertSuccess";
-const Detail = () => {
+
+const Detail = ({ paretNode }) => {
   const params = useParams();
   const [loading, setLoading] = React.useState(false);
   const [open, setOpen] = React.useState({ visible: false, action: "Simpan" });
@@ -240,6 +241,19 @@ const Detail = () => {
     }
   }, [loading, params.id]);
 
+  const refEdit = React.useRef(null);
+
+  React.useEffect(() => {
+    if (editTitle === true)
+      document.addEventListener("click", handleClickOutside, true);
+  }, [editTitle]);
+
+  const handleClickOutside = (e) => {
+    if (!refEdit.current.contains(e.target)) {
+      setEditTitle(false);
+    }
+  };
+
   return (
     <section data-cy="todolist-item" onClick={handleOpenSort}>
       <Activity
@@ -257,6 +271,7 @@ const Detail = () => {
         handleSort={handleSort}
         sort={sort}
         todos={todos}
+        refEdit={refEdit}
       />
       <div
         data-cy="detail"

@@ -16,6 +16,7 @@ const Activity = ({
   handleSort,
   todos,
   sort,
+  refEdit,
 }) => {
   const navigate = useNavigate();
 
@@ -31,7 +32,7 @@ const Activity = ({
             <img src={require("../assets/arrowLeft.svg").default} alt="" />
           </button>
         )}
-        <div className="flex items-center">
+        <div className="flex items-center" ref={refEdit}>
           {editTitle ? (
             <input
               ref={refInput}
