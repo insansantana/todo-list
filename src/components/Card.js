@@ -27,6 +27,7 @@ export const Card = ({ activity, setOpen }) => {
             }
           >
             <img
+              data-cy="activity-item-delete-button"
               src={require("../assets/trash.svg").default}
               alt="delete-icon"
             />

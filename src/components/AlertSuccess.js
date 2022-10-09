@@ -23,7 +23,10 @@ const AlertSuccess = ({ open, setOpen, content }) => {
                 src={require("../assets/info.svg").default}
                 alt="info-icon"
               />
-              <span className="ml-2 text-black font-bold">
+              <span
+                data-cy="modal-information"
+                className="ml-2 text-black font-bold"
+              >
                 {content || "Activity berhasil dihapus"}
               </span>
             </div>

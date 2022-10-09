@@ -79,19 +79,22 @@ const Home = () => {
   return (
     <section data-cy="home">
       <Activity create={createActivity} />
-      {activitys?.length > 0 ? (
-        <div className="container mx-auto grid lg:grid-cols-3 lg:gap-3 xl:grid-cols-4 xl:gap-4  grid-cols-2 gap-2 ">
-          {activitys.map((activity, i) => (
-            <Card key={i} activity={activity} setOpen={setOpenModal} />
-          ))}
-        </div>
-      ) : (
-        <img
-          src={require("../assets/activity.svg").default}
-          alt="logo-activity"
-          className="mx-auto"
-        />
-      )}
+      <div data-cy="activity-item">
+        {activitys?.length > 0 ? (
+          <div className="container mx-auto grid lg:grid-cols-3 lg:gap-3 xl:grid-cols-4 xl:gap-4  grid-cols-2 gap-2 ">
+            {activitys.map((activity, i) => (
+              <Card key={i} activity={activity} setOpen={setOpenModal} />
+            ))}
+          </div>
+        ) : (
+          <img
+            data-cy="activity-item-delete-button"
+            src={require("../assets/activity.svg").default}
+            alt="logo-activity"
+            className="mx-auto"
+          />
+        )}
+      </div>
       <AlertSuccess
         open={loading}
         setOpen={setLoading}

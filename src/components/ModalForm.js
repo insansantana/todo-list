@@ -43,6 +43,7 @@ const ModalForm = ({
                 NAMA LIST ITEM
               </label>
               <input
+                data-cy="modal-add-name-input"
                 type="text"
                 defaultValue={inputValue?.todo_item?.title}
                 placeholder="Tambahkan nama list item"
@@ -55,7 +56,10 @@ const ModalForm = ({
                 }
               />
             </div>
-            <div className="flex flex-col mx-4 p-4 ">
+            <div
+              data-cy="modal-add-priority-dropdown"
+              className="flex flex-col mx-4 p-4 "
+            >
               <label
                 htmlFor=""
                 className="text-gray-800 font-bold text-md mb-2"
@@ -151,8 +155,12 @@ const ModalForm = ({
               </div>
             </div>
 
-            <div className="mt-10 flex justify-end border-t">
+            <div
+              className="mt-10 flex justify-end border-t"
+              data-cy="todo-add-button"
+            >
               <button
+                data-cy="modal-add-save-button"
                 type="button"
                 className="inline-flex rounded-3xl border border-transparent bg-grey px-12 py-3 mr-10 my-4 text-base font-semibold text-white shadow-sm  focus:outline-none text-3xl"
                 style={{ background: "#16ABF8" }}

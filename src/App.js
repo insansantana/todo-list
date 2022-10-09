@@ -10,6 +10,7 @@ function App() {
     <Router>
       <div className="App" ref={paretNode}>
         <header
+          data-cy="header-title"
           className="w-full flex items-center"
           style={{ backgroundColor: "#16ABF8", height: "105px" }}
         >

@@ -20,36 +20,41 @@ const Activity = ({
   const navigate = useNavigate();
 
   return (
-    <div
-      data-cy="activity"
-      className="container mx-auto flex justify-between my-10"
-    >
+    <div className="container mx-auto flex justify-between my-10">
       <div className="text-3xl font-bold flex items-center">
         {params && (
           <span onClick={() => navigate(-1)} className="cursor-pointer">
             <img src={require("../assets/arrowLeft.svg").default} alt="" />
           </span>
         )}
-        {editTitle ? (
-          <input
-            ref={refInput}
-            type="text"
-            defaultValue={title}
-            onChange={handleChangeTitle}
-            className="border-b border-black outline-none"
-          />
-        ) : (
-          <span className="mx-3">{params ? title : "Activity"}</span>
-        )}
-        {params && (
-          <span onClick={handleEditTitle}>
-            <img
-              src={require("../assets/pencil.svg").default}
-              alt="pencil-icon"
-              className="cursor-pointer"
+        <div
+          className="flex items-center"
+          data-cy="todo-title"
+          onClick={handleEditTitle}
+        >
+          {editTitle ? (
+            <input
+              ref={refInput}
+              type="text"
+              defaultValue={title}
+              onChange={handleChangeTitle}
+              className="border-b border-black outline-none"
             />
-          </span>
-        )}
+          ) : (
+            <span data-cy="activity-title" className="mx-3">
+              {params ? title : "Activity"}
+            </span>
+          )}
+          {params && (
+            <span>
+              <img
+                src={require("../assets/pencil.svg").default}
+                alt="pencil-icon"
+                className="cursor-pointer"
+              />
+            </span>
+          )}
+        </div>
       </div>
       <div className="flex items-center">
         {params && (
@@ -59,6 +64,7 @@ const Activity = ({
                 src={require("../assets/sort.svg").default}
                 alt="sort-icon"
                 onClick={() => setOpenSort((prev) => !prev)}
+                data-cy="todo-sort-button"
               />
             )}
             {openSort && (
@@ -121,7 +127,7 @@ const Activity = ({
           </div>
         )}
         <button
-          data-cy="add-todolist"
+          data-cy="activity-add-button,todo-add-button"
           className="text-white font-bold py-2 px-4 rounded-3xl"
           style={{ backgroundColor: "#16ABF8" }}
           onClick={() => {
