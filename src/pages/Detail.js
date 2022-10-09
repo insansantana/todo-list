@@ -241,7 +241,7 @@ const Detail = () => {
   }, [loading, params.id]);
 
   return (
-    <section data-cy="activity-item" onClick={handleOpenSort}>
+    <section data-cy="todolist-item" onClick={handleOpenSort}>
       <Activity
         refInput={refInput}
         params={params}

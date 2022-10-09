@@ -113,9 +113,9 @@ const ModalForm = ({
                 {closeSelect && (
                   <div className="absolute w-full border z-50">
                     {priorities.map(({ value, label, badge }, i) => (
-                      <div
-                        data-cy="modal-add-priority-item"
+                      <button
                         key={i}
+                        data-cy="modal-add-priority-item"
                         className="bg-white w-full p-3 flex items-center border-b hover:bg-gray-200"
                         onClick={() => {
                           setInputValue((prev) => ({
@@ -152,7 +152,7 @@ const ModalForm = ({
                             />
                           </svg>
                         )}
-                      </div>
+                      </button>
                     ))}
                   </div>
                 )}

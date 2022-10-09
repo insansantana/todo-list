@@ -44,6 +44,7 @@ const Activity = ({
             <span
               data-cy={params?.id ? "todo-title" : "activity-title"}
               className="mx-3"
+              onClick={handleEditTitle}
             >
               {params ? title : "Activity"}
             </span>
