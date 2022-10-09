@@ -13,7 +13,7 @@ const ModalForm = ({
   refModal,
 }) => {
   if (!open.visible) return null;
-
+  console.log(inputValue);
   return (
     <div
       className="relative z-10"
@@ -158,9 +158,13 @@ const ModalForm = ({
                 )}
               </button>
             </div>
-
+            {console.log(inputValue.todo_item?.priority?.value === undefined)}
             <div className="mt-10 flex justify-end border-t">
               <button
+                disabled={
+                  inputValue.todo_item?.title === undefined ||
+                  inputValue.todo_item?.priority?.value === undefined
+                }
                 data-cy="modal-add-save-button"
                 type="button"
                 className="inline-flex rounded-3xl border border-transparent bg-grey px-12 py-3 mr-10 my-4 text-base font-semibold text-white shadow-sm  focus:outline-none text-3xl"
