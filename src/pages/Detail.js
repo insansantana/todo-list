@@ -158,6 +158,7 @@ const Detail = ({ paretNode }) => {
         if (method === "POST") {
           if (result?.code === 500) {
             setInfo(result);
+            setOpen((prev) => ({ ...prev, visible: false }));
             throw "internal server error";
           }
           setTodos((prev) => ({ ...prev, result }));
@@ -169,7 +170,10 @@ const Detail = ({ paretNode }) => {
         setOpen((prev) => ({ ...prev, visible: false }));
         setTimeout(() => setLoading(false), 2000);
       })
-      .catch((error) => console.log("error", error));
+      .catch((error) => {
+        setTimeout(() => setLoading(false), 2000);
+        console.log("error", error);
+      });
   };
 
   const deleteTodos = () => {
