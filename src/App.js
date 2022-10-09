@@ -6,9 +6,10 @@ import Home from "./pages/Home";
 
 function App() {
   const paretNode = React.useRef(null);
+
   return (
     <Router>
-      <div className="App" ref={paretNode}>
+      <div className="App">
         <header
           data-cy="header"
           className="w-full flex items-center"

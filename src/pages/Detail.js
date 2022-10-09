@@ -258,7 +258,11 @@ const Detail = () => {
         sort={sort}
         todos={todos}
       />
-      <div data-cy="detail" className="container mx-auto">
+      <div
+        data-cy="detail"
+        className="container mx-auto"
+        onClick={handleEditTitle}
+      >
         {todos?.todo_items?.length > 0 ? (
           todos?.todo_items?.map((item, i) => (
             <div key={i} data-cy="todo-item" className="flex items-center mb-4">
