@@ -88,7 +88,6 @@ const Home = () => {
           </div>
         ) : (
           <img
-            data-cy="activity-item-delete-button"
             src={require("../assets/activity.svg").default}
             alt="logo-activity"
             className="mx-auto"
