@@ -244,14 +244,13 @@ const Detail = ({ paretNode }) => {
   const refEdit = React.useRef(null);
 
   React.useEffect(() => {
-    console.log(editTitle);
     if (editTitle === true) {
       document.addEventListener("click", handleClickOutside, true);
     }
   }, [editTitle]);
 
   const handleClickOutside = (e) => {
-    if (!refEdit.current.contains(e.target)) {
+    if (!refEdit.current?.contains(e.target)) {
       setEditTitle(false);
     }
   };
