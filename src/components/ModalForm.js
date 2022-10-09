@@ -59,10 +59,7 @@ const ModalForm = ({
                 }
               />
             </div>
-            <div
-              data-cy="modal-add-priority-dropdown"
-              className="flex flex-col mx-4 p-4 "
-            >
+            <div className="flex flex-col mx-4 p-4 ">
               <label
                 htmlFor=""
                 className="text-gray-800 font-bold text-md mb-2"
@@ -70,6 +67,7 @@ const ModalForm = ({
                 PRIORITY
               </label>
               <button
+                data-cy="modal-add-priority-dropdown"
                 className={`border w-64 cursor-pointer relative`}
                 style={{ background: closeSelect && "#F4F4F4" }}
                 onClick={() => setCloseSelect((prev) => !prev)}
