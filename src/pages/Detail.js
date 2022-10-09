@@ -244,8 +244,10 @@ const Detail = ({ paretNode }) => {
   const refEdit = React.useRef(null);
 
   React.useEffect(() => {
-    if (editTitle === true)
+    console.log(editTitle);
+    if (editTitle === true) {
       document.addEventListener("click", handleClickOutside, true);
+    }
   }, [editTitle]);
 
   const handleClickOutside = (e) => {
@@ -273,11 +275,7 @@ const Detail = ({ paretNode }) => {
         todos={todos}
         refEdit={refEdit}
       />
-      <div
-        data-cy="detail"
-        className="container mx-auto"
-        onClick={handleEditTitle}
-      >
+      <div data-cy="detail" className="container mx-auto">
         {todos?.todo_items?.length > 0 ? (
           todos?.todo_items?.map((item, i) => (
             <div key={i} data-cy="todo-item" className="flex items-center mb-4">
