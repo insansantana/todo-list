@@ -69,7 +69,7 @@ const ModalForm = ({
               >
                 PRIORITY
               </label>
-              <div
+              <button
                 className={`border w-64 cursor-pointer relative`}
                 style={{ background: closeSelect && "#F4F4F4" }}
                 onClick={() => setCloseSelect((prev) => !prev)}
@@ -114,6 +114,7 @@ const ModalForm = ({
                   <div className="absolute w-full border z-50">
                     {priorities.map(({ value, label, badge }, i) => (
                       <div
+                        data-cy="modal-add-priority-item"
                         key={i}
                         className="bg-white w-full p-3 flex items-center border-b hover:bg-gray-200"
                         onClick={() => {
@@ -155,7 +156,7 @@ const ModalForm = ({
                     ))}
                   </div>
                 )}
-              </div>
+              </button>
             </div>
 
             <div className="mt-10 flex justify-end border-t">

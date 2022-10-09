@@ -48,16 +48,16 @@ const Activity = ({
               {params ? title : "Activity"}
             </span>
           )}
-          {params && (
-            <div onClick={handleEditTitle} data-cy="todo-title-edit-button">
-              <img
-                src={require("../assets/pencil.svg").default}
-                alt="pencil-icon"
-                className="cursor-pointer"
-              />
-            </div>
-          )}
         </div>
+        {params && (
+          <div data-cy="todo-title-edit-button" onClick={handleEditTitle}>
+            <img
+              src={require("../assets/pencil.svg").default}
+              alt="pencil-icon"
+              className="cursor-pointer"
+            />
+          </div>
+        )}
       </div>
       <div className="flex items-center">
         {params && (
@@ -67,10 +67,12 @@ const Activity = ({
                 data-cy="todo-sort-button"
                 onClick={() => setOpenSort((prev) => !prev)}
               >
-                <img
-                  src={require("../assets/sort.svg").default}
-                  alt="sort-icon"
-                />
+                <div>
+                  <img
+                    src={require("../assets/sort.svg").default}
+                    alt="sort-icon"
+                  />
+                </div>
               </button>
             )}
             {openSort && (
