@@ -34,7 +34,7 @@ const Detail = ({ paretNode }) => {
     },
     {
       label: "Medium",
-      value: "medium",
+      value: "normal",
       badge: "#00A790",
     },
     {
@@ -157,7 +157,7 @@ const Detail = ({ paretNode }) => {
       .then((result) => {
         if (method === "POST") {
           if (result?.code === 500) {
-            setInfo(result);
+            setInfo({ message: "Internal Server Error" });
             setOpen((prev) => ({ ...prev, visible: false }));
             throw "internal server error";
           }
