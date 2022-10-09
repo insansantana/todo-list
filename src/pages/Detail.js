@@ -261,7 +261,7 @@ const Detail = () => {
       <div data-cy="detail" className="container mx-auto">
         {todos?.todo_items?.length > 0 ? (
           todos?.todo_items?.map((item, i) => (
-            <div key={i} data-cy="todolist" className="flex items-center mb-4">
+            <div key={i} data-cy="todo-item" className="flex items-center mb-4">
               <div className="w-full shadow-lg flex items-center justify-between shadow-gray-200 p-5 rounded-xl">
                 <div className="flex items-center" data-cy="todo-item-checkbox">
                   <input
