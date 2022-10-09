@@ -263,7 +263,7 @@ const Detail = () => {
           todos?.todo_items?.map((item, i) => (
             <div key={i} data-cy="todo-item" className="flex items-center mb-4">
               <div className="w-full shadow-lg flex items-center justify-between shadow-gray-200 p-5 rounded-xl">
-                <div className="flex items-center" data-cy="todo-item-checkbox">
+                <div className="flex items-center">
                   <input
                     data-cy="todo-item-checkbox"
                     checked={!item.is_active}

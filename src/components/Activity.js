@@ -63,11 +63,13 @@ const Activity = ({
         {params && (
           <div className="cursor-pointer mr-4 relative">
             {todos?.todo_items?.length > 0 && (
-              <button data-cy="todo-sort-button">
+              <button
+                data-cy="todo-sort-button"
+                onClick={() => setOpenSort((prev) => !prev)}
+              >
                 <img
                   src={require("../assets/sort.svg").default}
                   alt="sort-icon"
-                  onClick={() => setOpenSort((prev) => !prev)}
                 />
               </button>
             )}
