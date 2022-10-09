@@ -60,12 +60,13 @@ const Activity = ({
         {params && (
           <div className="cursor-pointer mr-4 relative">
             {todos?.todo_items?.length > 0 && (
-              <img
-                src={require("../assets/sort.svg").default}
-                alt="sort-icon"
-                onClick={() => setOpenSort((prev) => !prev)}
-                data-cy="todo-sort-button"
-              />
+              <button data-cy="todo-sort-button">
+                <img
+                  src={require("../assets/sort.svg").default}
+                  alt="sort-icon"
+                  onClick={() => setOpenSort((prev) => !prev)}
+                />
+              </button>
             )}
             {openSort && (
               <div className="absolute border mt-2 -left-4 z-50">
@@ -97,6 +98,7 @@ const Activity = ({
                   },
                 ].map(({ label, value, src }, i) => (
                   <div
+                    data-cy="sort-selection"
                     key={i}
                     className="bg-white w-52 p-3 flex items-center border-b  hover:bg-gray-200"
                     onClick={() => {
@@ -127,7 +129,7 @@ const Activity = ({
           </div>
         )}
         <button
-          data-cy="activity-add-button,todo-add-button"
+          data-cy="activity-add-button"
           className="text-white font-bold py-2 px-4 rounded-3xl"
           style={{ backgroundColor: "#16ABF8" }}
           onClick={() => {

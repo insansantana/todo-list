@@ -5,7 +5,7 @@ const ModalDelete = ({ open, setOpen, deletItem, content }) => {
 
   return (
     <div
-      data-cy="modal-delete-cancel-button"
+      data-cy="modal-delete"
       className="relative z-10"
       aria-labelledby="modal-title"
       role="dialog"

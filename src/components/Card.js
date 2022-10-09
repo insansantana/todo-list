@@ -16,7 +16,8 @@ export const Card = ({ activity, setOpen }) => {
           <span className="font-semibold text-xl" style={{ color: "#888888" }}>
             {moment(created_at).format("DD MMMM YYYY")}
           </span>
-          <span
+          <button
+            data-cy="activity-item-delete-button"
             className="cursor-pointer"
             onClick={() =>
               setOpen({
@@ -27,11 +28,10 @@ export const Card = ({ activity, setOpen }) => {
             }
           >
             <img
-              data-cy="activity-item-delete-button"
               src={require("../assets/trash.svg").default}
               alt="delete-icon"
             />
-          </span>
+          </button>
         </div>
       </div>
     </div>

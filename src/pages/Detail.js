@@ -263,9 +263,8 @@ const Detail = () => {
           todos?.todo_items?.map((item, i) => (
             <div key={i} data-cy="todolist" className="flex items-center mb-4">
               <div className="w-full shadow-lg flex items-center justify-between shadow-gray-200 p-5 rounded-xl">
-                <div className="flex items-center">
+                <div className="flex items-center" data-cy="todo-item-checkbox">
                   <input
-                    data-cy="todo-item-checkbox"
                     checked={!item.is_active}
                     type="checkbox"
                     className="h-5 w-5"
@@ -338,6 +337,7 @@ const Detail = () => {
                   </span>
                 </div>
                 <div
+                  data-cy="todo-item-delete-button"
                   className="flex items-center"
                   onClick={() =>
                     setOpenModalDelete({
@@ -348,7 +348,6 @@ const Detail = () => {
                   }
                 >
                   <img
-                    data-cy="todo-item-delete-button"
                     src={require("../assets/trash.svg").default}
                     alt="logo-delete"
                     className="cursor-pointer"
@@ -359,7 +358,7 @@ const Detail = () => {
           ))
         ) : (
           <img
-            data-cy="detail-icon"
+            data-cy="todo-add-button"
             src={require("../assets/detail.svg").default}
             alt="detail-icon"
             className="mx-auto"
