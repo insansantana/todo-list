@@ -242,18 +242,35 @@ const Detail = ({ paretNode }) => {
   }, [loading, params.id]);
 
   const refEdit = React.useRef(null);
-
-  React.useEffect(() => {
-    if (editTitle === true) {
-      document.addEventListener("click", handleClickOutside, true);
-    }
-  }, [editTitle]);
-
-  const handleClickOutside = (e) => {
+  const refModal = React.useRef(null);
+  const handleClickOutsideEditTitle = (e) => {
     if (!refEdit.current?.contains(e.target)) {
       setEditTitle(false);
     }
   };
+  const handleClickOutsideModalForm = (e) => {
+    if (!refModal.current?.contains(e.target)) {
+      setOpen((prev) => ({ ...prev, visible: false }));
+    }
+  };
+  React.useEffect(() => {
+    if (open.visible === true) {
+      document.addEventListener("click", handleClickOutsideModalForm, true);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutsideModalForm, true);
+    };
+  }, [open.visible]);
+  React.useEffect(() => {
+    if (editTitle === true) {
+      document.addEventListener("click", handleClickOutsideEditTitle, true);
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutsideEditTitle, true);
+    };
+  }, [editTitle]);
 
   return (
     <section data-cy="todolist-item" onClick={handleOpenSort}>
@@ -402,6 +419,7 @@ const Detail = ({ paretNode }) => {
         createTodos={createUpdateTodos}
         priorities={priorities}
         todos={todos}
+        refModal={refModal}
       />
       <AlertSuccess
         open={loading}

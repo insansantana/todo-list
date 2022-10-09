@@ -10,6 +10,7 @@ const ModalForm = ({
   createTodos,
   priorities,
   todos,
+  refModal,
 }) => {
   if (!open.visible) return null;
 
@@ -24,6 +25,7 @@ const ModalForm = ({
       <div className="fixed inset-0 z-10 overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
           <div
+            ref={refModal}
             data-cy="modal-add"
             className="relative transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-9/12"
           >
@@ -111,7 +113,7 @@ const ModalForm = ({
                 {closeSelect && (
                   <div className="absolute w-full border z-50">
                     {priorities.map(({ value, label, badge }, i) => (
-                      <button
+                      <div
                         key={i}
                         data-cy="modal-add-priority-item"
                         className="bg-white w-full p-3 flex items-center border-b hover:bg-gray-200"
@@ -150,7 +152,7 @@ const ModalForm = ({
                             />
                           </svg>
                         )}
-                      </button>
+                      </div>
                     ))}
                   </div>
                 )}
