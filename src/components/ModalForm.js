@@ -158,7 +158,7 @@ const ModalForm = ({
                 )}
               </button>
             </div>
-            {console.log(inputValue.todo_item?.priority?.value === undefined)}
+
             <div className="mt-10 flex justify-end border-t">
               <button
                 disabled={
