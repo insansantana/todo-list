@@ -265,6 +265,7 @@ const Detail = () => {
               <div className="w-full shadow-lg flex items-center justify-between shadow-gray-200 p-5 rounded-xl">
                 <div className="flex items-center" data-cy="todo-item-checkbox">
                   <input
+                    data-cy="todo-item-checkbox"
                     checked={!item.is_active}
                     type="checkbox"
                     className="h-5 w-5"
@@ -336,7 +337,7 @@ const Detail = () => {
                     />
                   </span>
                 </div>
-                <div
+                <button
                   data-cy="todo-item-delete-button"
                   className="flex items-center"
                   onClick={() =>
@@ -352,7 +353,7 @@ const Detail = () => {
                     alt="logo-delete"
                     className="cursor-pointer"
                   />
-                </div>
+                </button>
               </div>
             </div>
           ))

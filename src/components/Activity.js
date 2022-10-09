@@ -31,11 +31,7 @@ const Activity = ({
             <img src={require("../assets/arrowLeft.svg").default} alt="" />
           </button>
         )}
-        <div
-          className="flex items-center"
-          data-cy="todo-title"
-          onClick={handleEditTitle}
-        >
+        <div className="flex items-center" onClick={handleEditTitle}>
           {editTitle ? (
             <input
               ref={refInput}
@@ -53,13 +49,13 @@ const Activity = ({
             </span>
           )}
           {params && (
-            <span>
+            <div data-cy="todo-title-edit-button">
               <img
                 src={require("../assets/pencil.svg").default}
                 alt="pencil-icon"
                 className="cursor-pointer"
               />
-            </span>
+            </div>
           )}
         </div>
       </div>

@@ -87,11 +87,13 @@ const Home = () => {
             ))}
           </div>
         ) : (
-          <img
-            src={require("../assets/activity.svg").default}
-            alt="logo-activity"
-            className="mx-auto"
-          />
+          <div data-cy="activity-empty-state">
+            <img
+              src={require("../assets/activity.svg").default}
+              alt="logo-activity"
+              className="mx-auto"
+            />
+          </div>
         )}
       </div>
       <AlertSuccess
