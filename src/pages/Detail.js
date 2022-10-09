@@ -156,6 +156,10 @@ const Detail = ({ paretNode }) => {
       .then((response) => response.json())
       .then((result) => {
         if (method === "POST") {
+          if (result?.code === 500) {
+            setInfo(result);
+            throw "internal server error";
+          }
           setTodos((prev) => ({ ...prev, result }));
           setInfo({ message: "List item berhasil dibuat" });
         } else {
