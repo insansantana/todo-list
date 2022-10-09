@@ -10,16 +10,17 @@ function App() {
     <Router>
       <div className="App" ref={paretNode}>
         <header
+          data-cy="header"
           className="w-full flex items-center"
           style={{ backgroundColor: "#16ABF8", height: "105px" }}
         >
-          <div className="container mx-auto">
-            <div
+          <div data-cy="header-background" className="container mx-auto">
+            <h1
               data-cy="header-title"
               className="nav text-3xl font-semibold text-white"
             >
               Todo List App
-            </div>
+            </h1>
           </div>
         </header>
 

@@ -155,10 +155,7 @@ const ModalForm = ({
               </div>
             </div>
 
-            <div
-              className="mt-10 flex justify-end border-t"
-              data-cy="todo-add-button"
-            >
+            <div className="mt-10 flex justify-end border-t">
               <button
                 data-cy="modal-add-save-button"
                 type="button"

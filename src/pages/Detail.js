@@ -359,7 +359,7 @@ const Detail = () => {
           ))
         ) : (
           <img
-            data-cy="todo-add-button"
+            data-cy="todo-empty-state"
             src={require("../assets/detail.svg").default}
             alt="detail-icon"
             className="mx-auto"
