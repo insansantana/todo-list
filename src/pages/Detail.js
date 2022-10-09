@@ -305,6 +305,7 @@ const Detail = () => {
                     </svg>
                   </span>
                   <span
+                    data-cy="todo-item-title"
                     className={`text-lg font-semibold ${
                       !item.is_active && "line-through opacity-50"
                     }`}

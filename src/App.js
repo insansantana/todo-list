@@ -19,7 +19,7 @@ function App() {
               data-cy="header-title"
               className="nav text-3xl font-semibold text-white"
             >
-              Todo List App
+              TO DO LIST APP
             </h1>
           </div>
         </header>

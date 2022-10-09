@@ -23,7 +23,10 @@ const ModalForm = ({
       <div className=" fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
       <div className="fixed inset-0 z-10 overflow-y-auto">
         <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-          <div className="relative transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-9/12">
+          <div
+            data-cy="modal-add"
+            className="relative transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-9/12"
+          >
             <div className="px-4 border-b flex items-center justify-between">
               <h3 className="text-2xl text-gray-700 font-bold p-4">
                 Tambah List Item
