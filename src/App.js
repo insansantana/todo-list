@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Detail from "./pages/Detail";
 import Home from "./pages/Home";
+import PortfolioApp from "./profile/PortfolioApp";
 
 function App() {
   const paretNode = React.useRef(null);
@@ -29,8 +30,9 @@ function App() {
           <Route
             path="/detail/:id"
             element={<Detail paretNode={paretNode} />}
-          ></Route>
-          <Route path="/" element={<Home paretNode={paretNode} />}></Route>
+          />
+          <Route path="/" element={<Home paretNode={paretNode} />} />
+          <Route path="/portfolio/*" element={<PortfolioApp />} />
         </Routes>
       </div>
     </Router>
