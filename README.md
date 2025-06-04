@@ -1,3 +1,16 @@
+# Todo List & Portfolio
+
+This project now includes a simple portfolio page inspired by the `insansantana/Portfolio` repository. Visit `/portfolio` while running the development server to view the profile.
+
+## Deploying to Vercel
+
+1. Install the Vercel CLI with `npm install -g vercel`.
+2. Run `npx vercel login` to authenticate.
+3. Build the project using `npm run build`.
+4. Deploy with `npx vercel --prod --confirm`.
+
+The included `vercel.json` sets up a project alias at **insansantana.vercel.app**.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
